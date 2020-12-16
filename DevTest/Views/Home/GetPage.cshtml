@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DevTest.Core.Classes.User>
+
+<table class="table" style="width: 100%;">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr >
+                <td>
+                    @user.UserName
+                </td>
+                <td>
+                    @user.Title @user.LastName
+                </td>
+                <td>
+                    @user.Email
+                </td>
+                <td>
+                    <span data-userId="@user.UserId.ToString()" class="isfavourite glyphicon" aria-hidden="true"></span>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

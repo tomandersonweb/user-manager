@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DevTest.Core.Classes.User>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>User Edit System</h1>
+    <h2 class="small">View, add and edit the users here.</h2>
+    
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="small">Users</h1>
+
+        <!--QUESTION: Why do we use the using keyword, both in this case, and potentially in other cases -->
+        <!--ANSWER: -->
+        @using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "GET", Url = Url.Action("GetPage"), UpdateTargetId = "updatethis", OnSuccess= "bindEvents()" }))
+        {
+            <div id="updatethis">
+                @Html.Partial("GetPage", Model)
+            </div>
+            <div class="pull-left"><button class="btn btn-default" type="submit" name="page" value="1">Page 1</button></div>
+            <div class="pull-right"><button class="btn btn-default" type="submit" name="page" value="2">Page 2</button></div>
+        }
+
+    </div>
+
+</div>
