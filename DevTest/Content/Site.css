@@ -48,7 +48,7 @@ textarea {
 }
 
 
-.active-row {
+tr:hover {
     background-color: #FAFAFA
 }
 
