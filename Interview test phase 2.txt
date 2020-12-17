@@ -7,17 +7,17 @@ The app is a list of users, you can view multiple pages of users and favourite u
 Plase 2 - Some changes and additions: 
 
 * The header rectangle at the top needs to be a different colour - #60edf8  - to be precise.
-
-
+Updated the css file. 
 
 
 * The Favourite buttons weren't working after you switch pages. Please fix this if you haven't already. Why was this the case? How would you commit this data to the server?
-
+The Jquery events were not being re-bound after the partial view updates. Added function binding to success callback of Ajax call. 
+Favourites passed to a function and onto the service. 
 
 
 
 * Operators are clicking the favourite button for the wrong user - implement something which will reduce the chance of this happening
-
+Hightlighted row that has been edited. 
 
 
 
