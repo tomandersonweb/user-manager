@@ -17,7 +17,7 @@ function bindEvents() {
             },
             success: function (response) {
                 favButton.toggleClass('on');
-                favButton.parent().toggleClass('active-row');
+                favButton.parent().parent().addClass('active-row');
             }
         });
     });
@@ -37,8 +37,7 @@ function bindEvents() {
             },
             success: function (response) {
                 membershipIcon.toggleClass('active-button');
-                membershipIcon.parent().toggleClass('active-row');
-
+                membershipIcon.parent().parent().addClass('active-row');
             }
         });
     });
