@@ -46,3 +46,17 @@ textarea {
 .glyphicon.isfavourite.on::before {
     content: "\e006";
 }
+
+
+.active-row {
+    background-color: #FAFAFA
+}
+
+.membershipGroup.active-button {
+    background-color: #60edf8;
+    color: black
+}
+
+.membershipGroup {
+    cursor: pointer;
+}

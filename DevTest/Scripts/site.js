@@ -16,8 +16,29 @@ function bindEvents() {
                 alert(response.responseText);
             },
             success: function (response) {
-                favButton.parent().parent().css("background-color", "#FAFAFA");
                 favButton.toggleClass('on');
+                favButton.parent().toggleClass('active-row');
+            }
+        });
+    });
+
+    $('.membershipGroup').on('click', function () {
+        var userId = $(this).attr("data-userId");
+        var groupId = $(this).attr("data-groupId");
+        var membershipIcon = $(this);
+        $.ajax({
+            url: "/Home/AddMembership",
+            type: "POST",
+            data: JSON.stringify({ userId, groupId }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            error: function (response) {
+                alert(response.responseText);
+            },
+            success: function (response) {
+                membershipIcon.toggleClass('active-button');
+                membershipIcon.parent().toggleClass('active-row');
+
             }
         });
     });

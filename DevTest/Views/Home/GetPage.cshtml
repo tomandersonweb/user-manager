@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DevTest.Core.Classes.User>
+﻿@model IEnumerable<DevTest.Models.UserModel>
 
 <table class="table" style="width: 100%;">
     <thead>
@@ -6,6 +6,7 @@
             <th>User Name</th>
             <th>Full Name</th>
             <th>Email</th>
+            <th>Membership</th>
             <th></th>
         </tr>
     </thead>
@@ -21,6 +22,12 @@
                 </td>
                 <td>
                     @user.Email
+                </td>
+                <td>
+                    @foreach (var membership in user.MembershipGroups)
+                    {
+                        <span class="membershipGroup badge badge-light" data-groupId="@membership.GroupId.ToString()" data-userId="@user.UserId.ToString()" >@membership.GroupName</span>
+                    }
                 </td>
                 <td>
                     <span data-userId="@user.UserId.ToString()" class="isfavourite glyphicon" aria-hidden="true"></span>
